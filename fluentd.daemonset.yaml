@@ -21,12 +21,12 @@ spec:
         hostPath:
           path: /var/lib/docker
       containers:
-      - image: sumologic/fluentd-kubernetes-sumologic:latest
+      - image: salilgupta/fluentd-kubernetes-sumologic:latest
         name: fluentd
         imagePullPolicy: Always
         volumeMounts:
         - name: host-logs
-          mountPath: /mnt/log/
+          mountPath: /var/log/
           readOnly: true
         - name: docker-logs
           mountPath: /var/lib/docker/
